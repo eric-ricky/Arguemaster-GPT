@@ -99,7 +99,7 @@ const Home: NextPageWithLayout = () => {
           </div>
         </div>
 
-        <div className="pt-20">
+        <div className="md:pt-20 pt-8">
           <Link
             href="/new"
             className="py-2 px-4 w-fit rounded-lg text-slate-900 font-medium bg-yellow-500 cursor-pointer hover:opacity-80 active:scale-95 duration-150 flex items-center space-x-2"

@@ -46,11 +46,10 @@ const ArgumentComponent: React.FC<IProps> = ({
               <div
                 onClick={() => {
                   router.push("/");
-                  router.push("/new");
                 }}
                 className="py-2 px-4 rounded-md text-white font-medium bg-gradient-to-br from-yellow-500 via-purple-500 to-rose-500 cursor-pointer hover:opacity-80 duration-150"
               >
-                Start
+                Home
               </div>
             </div>
           </div>

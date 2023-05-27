@@ -15,7 +15,7 @@ const MobileSidebar: React.FC<IMobileSidebar> = ({ setShowSidebar }) => {
   return (
     <div className="absolute top-0 left-0 z-50 w-full h-full overflow-hidden bg-slate-800 flex flex-col justify-between">
       <div className="flex flex-col space-y-2 h-screen overflow-hidden">
-        <div className="flex items-center justify-between py-2 px-4 border-b border-slate-800">
+        <div className="flex items-center justify-between pt-4 pb-2 px-4 border-b border-slate-800">
           <Logo bgDark />
 
           <XMarkIcon

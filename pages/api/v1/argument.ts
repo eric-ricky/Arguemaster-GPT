@@ -27,7 +27,7 @@ export default async function handler(
     // fake error response 😅😅
     res.status(500).json({
       error:
-        "Sorry😢, we are at capacity right now, and working to scale our servers. Please try again later.",
+        "Whoopsie-daisy! 🙈 Our servers are having a capacity crisis and need to hit the gym. Give them a breather and come back for a hilarious reunion later. 😄✨",
       success: false,
     });
     return;
