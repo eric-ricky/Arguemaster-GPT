@@ -44,19 +44,18 @@ const MainLayout: React.FC<IMainLayout> = ({ children }) => {
         <meta name="twitter:image" content={meta.cardImage} />
       </Head>
 
-      <div className="grid grid-cols-12 h-screen bg-[#111827]">
+      <div className="grid grid-cols-12 max-h-[90vh] lg:max-h-[100vh] overflow-hidden bg-slate-900">
         <Sidebar />
 
         <div className="col-span-12 xl:col-span-10 lg:col-span-8 h-screen overflow-hidden relative">
           <Topbar />
-
           {children}
         </div>
-      </div>
 
-      {UICtx?.showSidebar && (
-        <MobileSidebar setShowSidebar={UICtx.setShowSidebar} />
-      )}
+        {UICtx?.showSidebar && (
+          <MobileSidebar setShowSidebar={UICtx.setShowSidebar} />
+        )}
+      </div>
     </>
   );
 };

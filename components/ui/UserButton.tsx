@@ -41,7 +41,7 @@ const UserButton = () => {
       ) : (
         <Link
           href="/signin"
-          className="flex space-x-3 items-center justify-center rounded-md bg-slate-800 p-2 cursor-pointer hover:bg-slate-700 active:scale-90 duration-150"
+          className="flex space-x-3 items-center justify-center rounded-md bg-slate-700 p-2 cursor-pointer hover:bg-slate-600 active:scale-90 duration-150"
         >
           <ArrowLeftOnRectangleIcon className="w-6 text-slate-200" />
           <span className="text-white">Sign in</span>

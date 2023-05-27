@@ -120,7 +120,7 @@ const SigninComponent: React.FC<IProps> = ({
           </div>
 
           <div className="col-span-12 flex flex-col">
-            <div className="flex items-center rounded-md overflow-hidden border bg-slate-700 relative">
+            <div className="flex items-center rounded-md overflow-hidden border bg-slate-700 pr-2 relative">
               <input
                 type={showPassword ? "text" : "password"}
                 {...getFieldProps("password")}

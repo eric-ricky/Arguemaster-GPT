@@ -8,8 +8,8 @@ import { NextPageWithLayout } from "./page";
 
 const Home: NextPageWithLayout = () => {
   return (
-    <section className="h-screen overflow-hidden">
-      <div className="py-20 md:py-44 px-5 xl:px-64 lg:px-12 h-full overflow-y-scroll md:scrollbar-thin ">
+    <section className="h-full pb-40">
+      <div className="py-20 md:py-44 px-5 xl:px-64 lg:px-12 h-full overflow-y-scroll md:scrollbar-thin">
         <div className="flex flex-col md:flex-row md:space-x-10">
           <div className="md:w-1/2">
             <div className="flex items-ceter space-x-2">
@@ -86,7 +86,12 @@ const Home: NextPageWithLayout = () => {
 
               <div className="hidden md:flex items-center space-x-2 pr-4">
                 <ArrowUpRightIcon className="w-4" />
-                <Link href="/" className="underline">
+                <Link
+                  href="https://github.com/eric-ricky"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline"
+                >
                   GitHub Repo
                 </Link>
               </div>

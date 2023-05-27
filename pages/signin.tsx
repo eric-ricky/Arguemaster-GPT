@@ -19,7 +19,7 @@ const SigninPage = () => {
         </div>
       )}
 
-      <section className="bg-slate-900 min-h-screen md:pt-52 pt-32 lg:pb-20">
+      <section className="bg-slate-900 min-h-screen md:pt-52 pt-20 lg:pb-20 pb-32">
         <div className="container mx-auto w-full min-h-full px-10 md:px-44 flex bg-slate-00">
           <div className="w-full md:w-96 mx-auto flex flex-col space-y-8 rounded-xl md:px-5 bg-whit">
             <div className="grid place-items-center text-center w-full pb-8">
