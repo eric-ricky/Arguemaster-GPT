@@ -8,7 +8,7 @@ const Sidebar = () => {
   const historyCtx = useHistoryContext();
 
   return (
-    <div className="col-span-12 xl:col-span-2 lg:col-span-4 h-screen hidden lg:flex flex-col space-y-1 border-r border-slate-800">
+    <div className="col-span-12 xl:col-span-2 lg:col-span-4 h-screen max-h-screen overflow-hidden hidden lg:flex flex-col space-y-1 border-r border-slate-800">
       <div className="flex items-center justify-between py-4 px-2">
         <Logo bgDark />
 

@@ -1,9 +1,8 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import { oneLine, stripIndent } from "common-tags";
+import GPT3Tokenizer from "gpt3-tokenizer";
 import type { NextApiRequest, NextApiResponse } from "next";
 import { Configuration, OpenAIApi } from "openai";
-// import { PostgrestError, createClient } from "@supabase/supabase-js";
-import GPT3Tokenizer from "gpt3-tokenizer";
-import { oneLine, stripIndent } from "common-tags";
 
 type Data = {
   success: boolean;
@@ -16,11 +15,6 @@ type Data = {
   };
 };
 
-// initializing supabase client
-// const projectUrl = process.env.NEXT_PUBLIC_SUPABASE_PROJECT_URL || "";
-// const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
-// const supabase = createClient(projectUrl, anonKey);
-
 // initializing openai
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_KEY,
@@ -32,17 +26,19 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   if (!configuration.apiKey) {
+    // fake error response 😅😅
     res.status(500).json({
-      error: "Something went wrong. Please contact support for help.",
+      error:
+        "Sorry😢, we are at capacity right now, and working to scale our servers. Please try again later.",
       success: false,
     });
     return;
   }
 
-  // getting question and history
+  // getting issue and position
   const { issue, position } = req.body;
 
-  // checking if there is question
+  // checking position and issues are empty
   if (!issue || !position) {
     res.status(400).json({
       error: "Your input doesn't look right. Try again.",
@@ -77,7 +73,7 @@ export default async function handler(
     }
 
     // create prompt (system statement, relevant docs, question)
-    const prompt = stripIndent`${oneLine`I am involved in a discussion about (topic: ${issue}). Please help me uncover the most powerful argument in favor of my position (position: ${position}) by providing a well-structured, persuasive, and data-driven argument. Rules you must follow strictly: 1. Do not repeat the prompt, just return the response in the following structure(up to 2 points max):`}
+    const prompt = stripIndent`${oneLine`I am involved in a discussion about (topic: ${issue}). Please help me uncover the most powerful argument in favor of my position (position: ${position}). Provide a well-structured, persuasive, and data-driven argument. Rules you must follow strictly: 1. Do not repeat the prompt, just return the response in the following structure(up to 2 points max):`}
     1. point
     2. point`;
 

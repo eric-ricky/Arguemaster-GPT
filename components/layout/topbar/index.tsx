@@ -12,7 +12,7 @@ const Topbar = () => {
         <MobileSidebar setShowSidebar={UICtx.setShowSidebar} />
       )}
 
-      <div className="md:hidden flex items-center justify-between fixed top-0 left-0 w-full bg-slate-800 py-2 px-5">
+      <div className="lg:hidden flex items-center justify-between fixed top-0 left-0 w-full bg-slate-800 py-2 px-5 bg-opacity-50">
         <Bars3Icon
           onClick={() => UICtx?.setShowSidebar((prev) => !prev)}
           className="w-7 text-zinc-200 cursor-pointer hover:text-slate-white active:scale-95 duration-150"

@@ -8,8 +8,8 @@ import { NextPageWithLayout } from "./page";
 
 const Home: NextPageWithLayout = () => {
   return (
-    <section className="">
-      <div className="container mx-auto py-20 px-5 md:py-44 xl:px-44 lg:px-12">
+    <section className="h-screen overflow-hidden">
+      <div className="py-20 md:py-44 px-5 xl:px-64 lg:px-12 h-full overflow-y-scroll">
         <div className="flex flex-col md:flex-row md:space-x-10">
           <div className="md:w-1/2">
             <div className="flex items-ceter space-x-2">
@@ -33,6 +33,28 @@ const Home: NextPageWithLayout = () => {
           </div>
 
           <div className="flex-grow mt-10 md:mt-0">
+            <div className="w-full rounded-xl border border-slate-700 mb-10">
+              <div className="p-5">
+                <p className="text-slate-400">About the authors</p>
+                <p className="text-white">Eric Ricky | OpenAI/GPT-3.5</p>
+              </div>
+
+              <div className="rounded-xl bg-slate-800 flex items-center space-x-5 p-2 -mb-2 text-white">
+                <div className="flex items-center space-x-2">
+                  <ArrowUpRightIcon className="w-4" />
+                  <Link href="/" className="underline">
+                    Twitter
+                  </Link>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <ArrowUpRightIcon className="w-4" />
+                  <Link href="/" className="underline">
+                    LinkedIn
+                  </Link>
+                </div>
+              </div>
+            </div>
+
             <div className="flex items-center justify-between border border-slate-500 bg-slate-700 rounded-full text-white px-2 py-1">
               <div className="flex items-center space-x-2">
                 <div className="rounded-full px-2 bg-orange-200 text-orange-500 text-sm">
@@ -52,28 +74,6 @@ const Home: NextPageWithLayout = () => {
                 <Link href="/" className="underline">
                   GitHub Repo
                 </Link>
-              </div>
-            </div>
-
-            <div className="w-full rounded-xl border border-slate-700 mt-10">
-              <div className="p-5">
-                <p className="text-slate-400">About the authors</p>
-                <p className="text-white">Eric Ricky | OpenAI/GPT-3.5</p>
-              </div>
-
-              <div className="rounded-xl bg-slate-800 flex items-center space-x-5 p-2 -mb-2 text-white">
-                <div className="flex items-center space-x-2">
-                  <ArrowUpRightIcon className="w-4" />
-                  <Link href="/" className="underline">
-                    Twitter
-                  </Link>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <ArrowUpRightIcon className="w-4" />
-                  <Link href="/" className="underline">
-                    LinkedIn
-                  </Link>
-                </div>
               </div>
             </div>
           </div>

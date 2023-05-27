@@ -14,7 +14,7 @@ const MobileSidebar: React.FC<IMobileSidebar> = ({ setShowSidebar }) => {
   const historyCtx = useHistoryContext();
 
   return (
-    <div className="fixed top-0 left-0 z-50 w-full h-screen bg-slate-900 flex flex-col space-y-1">
+    <div className="bg-slate-900 fixed top-0 left-0 z-50 w-full h-screen max-h-screen overflow-hidden flex flex-col">
       <div className="flex items-center justify-end p-2">
         <XMarkIcon
           onClick={() => setShowSidebar(false)}
@@ -22,7 +22,7 @@ const MobileSidebar: React.FC<IMobileSidebar> = ({ setShowSidebar }) => {
         />
       </div>
 
-      <div className="flex items-center justify-between py-4 px-2">
+      <div className="flex items-center justify-between px-2">
         <Logo bgDark />
 
         <NewButton />
