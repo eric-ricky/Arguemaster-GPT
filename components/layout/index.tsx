@@ -1,7 +1,9 @@
-import { ReactNode } from "react";
-import Sidebar from "./sidebar";
+import { useUIContext } from "@/lib/context/ui";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { ReactNode } from "react";
+import MobileSidebar from "./mobile-sidebar";
+import Sidebar from "./sidebar";
 import Topbar from "./topbar";
 
 interface IMainLayout {
@@ -9,6 +11,7 @@ interface IMainLayout {
 }
 
 const MainLayout: React.FC<IMainLayout> = ({ children }) => {
+  const UICtx = useUIContext();
   const router = useRouter();
   const meta = {
     title:
@@ -50,6 +53,10 @@ const MainLayout: React.FC<IMainLayout> = ({ children }) => {
           {children}
         </div>
       </div>
+
+      {UICtx?.showSidebar && (
+        <MobileSidebar setShowSidebar={UICtx.setShowSidebar} />
+      )}
     </>
   );
 };

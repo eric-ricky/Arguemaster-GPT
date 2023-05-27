@@ -9,21 +9,21 @@ const Sidebar = () => {
 
   return (
     <div className="col-span-12 xl:col-span-2 lg:col-span-4 h-screen max-h-screen overflow-hidden hidden lg:flex flex-col space-y-1 border-r border-slate-800">
-      <div className="flex items-center justify-between py-4 px-2">
+      <div className="h-[5vh] flex items-center justify-between py-4 px-2">
         <Logo bgDark />
 
         <NewButton />
       </div>
 
-      <div className="pt-5 px-4 text-white font-medium">History</div>
-
-      <div className="flex-1 h-[75%] flex flex-col space-y-2 w-full px-3 py-5 overflow-y-scroll scrollbar-thin scrollbar-track-slate-800 scrollbar-thumb-slate-800">
-        {historyCtx?.history.map((h) => (
-          <History key={h.id} history={h} />
+      <div className="h-[85vh] overflow-y-scroll scrollbar-thin scrollbar-track-inherit scrollbar-thumb-slate-800 flex flex-col space-y-2 py-5 px-4">
+        {historyCtx?.history.map((history) => (
+          <History key={history.id} history={history} />
         ))}
       </div>
 
-      <UserButton />
+      <div className="flex-1 flex flex-col justify-center py-5 px-4">
+        <UserButton />
+      </div>
     </div>
   );
 };

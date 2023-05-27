@@ -9,7 +9,7 @@ import { NextPageWithLayout } from "./page";
 const Home: NextPageWithLayout = () => {
   return (
     <section className="h-screen overflow-hidden">
-      <div className="py-20 md:py-44 px-5 xl:px-64 lg:px-12 h-full overflow-y-scroll">
+      <div className="py-20 md:py-44 px-5 xl:px-64 lg:px-12 h-full overflow-y-scroll md:scrollbar-thin ">
         <div className="flex flex-col md:flex-row md:space-x-10">
           <div className="md:w-1/2">
             <div className="flex items-ceter space-x-2">

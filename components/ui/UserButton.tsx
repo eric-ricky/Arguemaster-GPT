@@ -10,7 +10,7 @@ const UserButton = () => {
   const authCtx = useAuthContext();
 
   return (
-    <div className="py-5 px-4 border-t border-slate-700">
+    <>
       {authCtx?.state.user ? (
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
@@ -33,7 +33,7 @@ const UserButton = () => {
 
           <div
             onClick={authCtx.handleLogout}
-            className="p-2 rounded-md bg-slate-800 cursor-pointer hover:bg-slate-700 active:scale-90 duration-150"
+            className="p-2 rounded-md bg-slate-700 cursor-pointer hover:bg-slate-600 active:scale-90 duration-150"
           >
             <ArrowRightOnRectangleIcon className="w-6 text-slate-200" />
           </div>
@@ -47,7 +47,7 @@ const UserButton = () => {
           <span className="text-white">Sign in</span>
         </Link>
       )}
-    </div>
+    </>
   );
 };
 

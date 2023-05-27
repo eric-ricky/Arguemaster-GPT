@@ -1,8 +1,9 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import configuration from "@/lib/openaiConfig";
 import { oneLine, stripIndent } from "common-tags";
 import GPT3Tokenizer from "gpt3-tokenizer";
 import type { NextApiRequest, NextApiResponse } from "next";
-import { Configuration, OpenAIApi } from "openai";
+import { OpenAIApi } from "openai";
 
 type Data = {
   success: boolean;
@@ -16,9 +17,6 @@ type Data = {
 };
 
 // initializing openai
-const configuration = new Configuration({
-  apiKey: process.env.OPENAI_KEY,
-});
 const openai = new OpenAIApi(configuration);
 
 export default async function handler(

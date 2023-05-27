@@ -38,7 +38,7 @@ const ArgumentComponent: React.FC<IProps> = ({
             <LoadingDots />
           </div>
         ) : error ? (
-          <div className="w-full flex items-center justify-center px-10 py-10">
+          <div className="w-full flex items-center justify-center px-2 py-10">
             <div className="flex flex-col space-y-4 items-center justify-center my-2">
               <p className="text-red-500 text-center">{error}</p>
 
