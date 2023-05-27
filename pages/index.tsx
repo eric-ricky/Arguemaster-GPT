@@ -27,8 +27,8 @@ const Home: NextPageWithLayout = () => {
             </div>
 
             <p className="mt-10 text-slate-200 xl:w-2/3 lg:w-[90%]">
-              Put an End to 'Mr. Know-It-All' and Dominate Family Gatherings and
-              Parties with Unbeatable Arguments 😅
+              Dominate Discussions with Compelling and Unbeatable Arguments
+              Tailored to your Specific Position on any Issue or Topic 😅
             </p>
           </div>
 

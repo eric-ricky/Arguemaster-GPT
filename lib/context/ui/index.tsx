@@ -10,6 +10,8 @@ import {
 interface IUIContext {
   showSidebar: boolean;
   setShowSidebar: Dispatch<SetStateAction<boolean>>;
+  showDisclaimer: boolean;
+  setShowDisclaimer: Dispatch<SetStateAction<boolean>>;
 }
 const UIContext = createContext<IUIContext | null>(null);
 
@@ -18,8 +20,11 @@ interface IUIContextProvider {
 }
 const UIContextProvider: React.FC<IUIContextProvider> = ({ children }) => {
   const [showSidebar, setShowSidebar] = useState(false);
+  const [showDisclaimer, setShowDisclaimer] = useState(true);
   return (
-    <UIContext.Provider value={{ setShowSidebar, showSidebar }}>
+    <UIContext.Provider
+      value={{ setShowSidebar, showSidebar, setShowDisclaimer, showDisclaimer }}
+    >
       {children}
     </UIContext.Provider>
   );

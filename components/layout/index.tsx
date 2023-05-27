@@ -2,6 +2,7 @@ import { useUIContext } from "@/lib/context/ui";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { ReactNode } from "react";
+import DisclaimerModal from "../ui/modals/Disclaimer";
 import MobileSidebar from "./mobile-sidebar";
 import Sidebar from "./sidebar";
 import Topbar from "./topbar";
@@ -18,7 +19,7 @@ const MainLayout: React.FC<IMainLayout> = ({ children }) => {
       "😎 ArguMaster GPT 😅 | Unbeatable Arguments Generator - Win Every Argument 😅",
     description:
       "ArguMaster GPT 😎😅 uses cutting-edge AI technology to generate arguments that are both logical and persuasive. With ArguMaster, you'll never lose an argument again!",
-    cardImage: "https://vidawa.top/images/vidawa.ai.jpg",
+    cardImage: "https://arguemaster-gpt.vercel.app/preview.jpg",
   };
 
   return (
@@ -30,7 +31,7 @@ const MainLayout: React.FC<IMainLayout> = ({ children }) => {
         <meta content={meta.description} name="description" />
         <meta
           property="og:url"
-          content={`https://wecodepro.top${router.asPath}`}
+          content={`https://arguemaster-gpt.vercel.app${router.asPath}`}
         />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content={meta.title} />
@@ -56,6 +57,8 @@ const MainLayout: React.FC<IMainLayout> = ({ children }) => {
           <MobileSidebar setShowSidebar={UICtx.setShowSidebar} />
         )}
       </div>
+
+      {UICtx?.showDisclaimer && <DisclaimerModal />}
     </>
   );
 };

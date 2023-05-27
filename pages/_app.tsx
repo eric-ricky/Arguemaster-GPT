@@ -7,6 +7,7 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { NextPageWithLayout } from "./page";
+import Script from "next/script";
 
 interface IAppPropsWithLayout extends AppProps {
   Component: NextPageWithLayout;
@@ -27,7 +28,7 @@ export default function App({ Component, pageProps }: IAppPropsWithLayout) {
   return (
     <>
       {/* <!-- Google tag (gtag.js) --> */}
-      {/* <Script
+      <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
       />
@@ -41,7 +42,7 @@ export default function App({ Component, pageProps }: IAppPropsWithLayout) {
         page_path: window.location.pathname,
         });
     `}
-      </Script> */}
+      </Script>
 
       <AuthContextProvider>
         <HistoryContextProvider>

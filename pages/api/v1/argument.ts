@@ -72,8 +72,8 @@ export default async function handler(
 
     // create prompt (system statement, relevant docs, question)
     const prompt = stripIndent`${oneLine`I am involved in a discussion about (topic: ${issue}). Please help me uncover the most powerful argument in favor of my position (position: ${position}). Provide a well-structured, persuasive, and data-driven argument. Rules you must follow strictly: 1. Do not repeat the prompt, just return the response in the following structure(up to 2 points max):`}
-    1. point
-    2. point`;
+    Point 1: point
+    Point 2: point`;
 
     const response = await openai.createCompletion({
       model: "text-davinci-003",

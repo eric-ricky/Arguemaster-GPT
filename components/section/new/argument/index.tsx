@@ -2,6 +2,7 @@ import LoadingDots from "@/components/ui/LoadingDots";
 import { Transition } from "@headlessui/react";
 import { useRouter } from "next/router";
 import React from "react";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 interface IProps {
   step: number;
@@ -55,10 +56,10 @@ const ArgumentComponent: React.FC<IProps> = ({
           </div>
         ) : (
           <div
-            className="w-fit flex-1 rounded-lg border border-slate-700 text-white flex flex-col space-y-5
+            className="w-fit rounded-lg border border-slate-700 text-white flex flex-col space-y-5
                  p-5"
           >
-            {argument}
+            <ReactMarkdown className="">{argument}</ReactMarkdown>
           </div>
         )}
       </div>
