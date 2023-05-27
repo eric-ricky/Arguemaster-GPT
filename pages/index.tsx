@@ -42,13 +42,23 @@ const Home: NextPageWithLayout = () => {
               <div className="rounded-xl bg-slate-800 flex items-center space-x-5 p-2 -mb-2 text-white">
                 <div className="flex items-center space-x-2">
                   <ArrowUpRightIcon className="w-4" />
-                  <Link href="/" className="underline">
+                  <Link
+                    href="https://twitter.com/ereakricky"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="underline"
+                  >
                     Twitter
                   </Link>
                 </div>
                 <div className="flex items-center space-x-2">
                   <ArrowUpRightIcon className="w-4" />
-                  <Link href="/" className="underline">
+                  <Link
+                    href="https://www.linkedin.com/in/erick-otieno-7532b01b9/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="underline"
+                  >
                     LinkedIn
                   </Link>
                 </div>
@@ -63,7 +73,12 @@ const Home: NextPageWithLayout = () => {
 
                 <div className="text-sm">
                   This project is open source on{" "}
-                  <Link href="/" className="underline underline-offset-2">
+                  <Link
+                    href="https://github.com/eric-ricky"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="underline underline-offset-2"
+                  >
                     GitHub
                   </Link>
                 </div>

@@ -45,7 +45,7 @@ const SignupComponent: React.FC<IProps> = ({
     validationSchema: userSchema,
     onSubmit: async (values) => {
       try {
-        setFormError(undefined)
+        setFormError(undefined);
         setIsLoadingStatus("Authenticating...");
 
         const { email, firstname, lastname, password } = values;

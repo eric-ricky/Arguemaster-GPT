@@ -34,8 +34,8 @@ const SingleArgumentPage: NextPageWithLayout = () => {
 
   if (!current) {
     return (
-      <section className="h-screen overflow-y-scroll scrollbar-thin scrollbar-track-slate-800 scrollbar-thumb-slate-700 py-12">
-        <div className="container mx-auto px-5 py-10 xl:px-80 lg:px-12 flex flex-col space-y-5 items-center">
+      <section className="h-screen overflow-hidden">
+        <div className="py-20 md:py-40 px-5 xl:px-64 lg:px-12 h-full overflow-y-scroll">
           <div className="text-white">Nothing found here!</div>
 
           <Link

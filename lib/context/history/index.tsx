@@ -1,13 +1,6 @@
 import { db } from "@/lib/firebaseConfig";
 import { IHistory } from "@/types";
-import {
-  collection,
-  deleteDoc,
-  doc,
-  getDocs,
-  query,
-  where,
-} from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import {
   Dispatch,
   ReactNode,
@@ -22,7 +15,6 @@ import { useAuthContext } from "../auth";
 interface IHistoryContext {
   history: IHistory[];
   setHistory: Dispatch<SetStateAction<IHistory[]>>;
-  handleDelete: (_id: string) => Promise<void>;
 }
 const HistoryContext = createContext<IHistoryContext | null>(null);
 
@@ -37,16 +29,16 @@ const HistoryContextProvider: React.FC<IHistoryContextProvider> = ({
 
   useEffect(() => {
     const fetchHistory = async () => {
-      console.log("fetching history data....");
       if (!authCtx?.state.user?.uid) return;
 
+      console.log("fetching history data....");
       try {
         const histRef = collection(db, "history");
         const q = query(histRef, where("author", "==", authCtx.state.user.uid));
 
         const snapshots = await getDocs(q);
 
-        console.log("snapshots===>", snapshots);
+        console.log("snapshots===>", snapshots.size);
 
         if (snapshots.empty) return;
 
@@ -66,23 +58,8 @@ const HistoryContextProvider: React.FC<IHistoryContextProvider> = ({
     fetchHistory();
   }, [authCtx?.state.user?.uid]);
 
-  useEffect(() => {
-    console.log("History ===>", history);
-  }, [history]);
-
-  const handleDelete = async (id: string) => {
-    try {
-      const histRef = doc(db, "history", id);
-      await deleteDoc(histRef);
-
-      setHistory((prev) => prev.filter((h) => h.id !== id));
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   return (
-    <HistoryContext.Provider value={{ handleDelete, history, setHistory }}>
+    <HistoryContext.Provider value={{ history, setHistory }}>
       {children}
     </HistoryContext.Provider>
   );
